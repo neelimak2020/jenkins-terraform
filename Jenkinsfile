@@ -33,23 +33,7 @@ bat label: '', script: 'terraform --version'
 
 
   // Run terraform init
-  stage('init') {
-    node {
-	    ws('C:\\Users\\Neelima\\Desktop\\terraform') {
-
-    withCredentials([[
-		$class: 'AmazonWebServicesCredentialsBinding',
-		 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-		 credentialsId: 'd663c70e-cff8-4c07-b5a6-fcffceffafe9',
-		 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-      ]]) {
-        ansiColor('xterm') {
-bat label: '', script: 'terraform init'      
-	}
-      }
-    }
-  }
-  }
+  
   // Run terraform plan
   stage('plan') {
     node {
