@@ -23,7 +23,8 @@ bat label: '', script: '''echo starting pipeline'''
                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-bat label: '', script: 'terraform --version'        }
+bat label: '', script: 'terraform --version'    
+	}
       }
     }
   }
@@ -39,8 +40,8 @@ bat label: '', script: 'terraform --version'        }
 		 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform init'
-        }
+bat label: '', script: 'terraform init'      
+	}
       }
     }
   }
@@ -55,7 +56,7 @@ bat label: '', script: 'terraform --version'        }
                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
      ]]) {
         ansiColor('xterm') {
-          sh 'terraform plan'
+bat label: '', script: 'terraform plan'      
         }
       }
     }
@@ -73,7 +74,8 @@ bat label: '', script: 'terraform --version'        }
                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
        ]]) {
           ansiColor('xterm') {
-            sh 'terraform apply -auto-approve'
+		  bat label: '', script: 'terraform apply -auto-approve'     
+
           }
         }
       }
@@ -89,7 +91,9 @@ bat label: '', script: 'terraform --version'        }
                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-            sh 'terraform show'
+		bat label: '', script: 'terraform show'     
+
+		  
           }
         }
       }
