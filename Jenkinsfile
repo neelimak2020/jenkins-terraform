@@ -7,6 +7,11 @@ try {
       checkout scm
     }
   }
+	stage('terraform started') {
+		node{
+		sh 'echo "Started...!" '
+            }
+        }
 
   // checking terraform version
   stage('version') {
