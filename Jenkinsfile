@@ -18,16 +18,8 @@ bat label: '', script: '''echo starting pipeline'''
   // checking terraform version
   stage('version') {
     node {
-    withCredentials([[
-                $class: 'AmazonWebServicesCredentialsBinding',
-                 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
-                 credentialsId: 'd663c70e-cff8-4c07-b5a6-fcffceffafe9',
-                 secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
-      ]]) {
-        ansiColor('xterm') {
-bat label: '', script: 'terraform --version'    
-	}
-      }
+   	    bat label: '', script: 'terraform --version'    
+
     }
   }
 
