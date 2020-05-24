@@ -1,7 +1,6 @@
 // Jenkinsfile
 
 try {
-	ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
   stage('checkout') {
     node {
 		ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
