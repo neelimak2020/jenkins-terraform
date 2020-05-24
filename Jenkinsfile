@@ -9,7 +9,7 @@ try {
   }
 
   // checking terraform version
-  stage('init') {
+  stage('version') {
     node {
     withCredentials([[
                 $class: 'AmazonWebServicesCredentialsBinding',
