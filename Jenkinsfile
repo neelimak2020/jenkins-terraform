@@ -9,8 +9,8 @@ try {
   }
 	stage('terraform started') {
 		node{
-		sh 'echo "Started...!" '
-            }
+bat label: '', script: '''echo starting pipeline'''     
+		}
         }
 
   // checking terraform version
