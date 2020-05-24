@@ -3,9 +3,8 @@
 try {
   stage('checkout') {
     node {
-		ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
+ws('C:\\Users\\Neelima\\Desktop\\terraform') {
     
-      cleanWs()
       checkout scm
 		}
     }
