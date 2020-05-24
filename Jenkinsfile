@@ -23,8 +23,7 @@ bat label: '', script: '''echo starting pipeline'''
                  secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform --version'
-        }
+bat label: '', script: 'terraform --version'        }
       }
     }
   }
