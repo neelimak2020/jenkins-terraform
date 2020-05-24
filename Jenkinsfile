@@ -1,6 +1,7 @@
 // Jenkinsfile
 
 try {
+	ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
   stage('checkout') {
     node {
       cleanWs()
@@ -112,4 +113,5 @@ finally {
   if (currentBuild.result == 'SUCCESS') {
     currentBuild.result = 'SUCCESS'
   }
+}
 }
