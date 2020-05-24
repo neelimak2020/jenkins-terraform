@@ -4,8 +4,11 @@ try {
 	ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
   stage('checkout') {
     node {
+		ws('C:\\Users\\Neelima\\Desktop\\terraform_master') {
+    
       cleanWs()
       checkout scm
+		}
     }
   }
 	stage('terraform started') {
@@ -112,6 +115,5 @@ catch (err) {
 finally {
   if (currentBuild.result == 'SUCCESS') {
     currentBuild.result = 'SUCCESS'
-  }
 }
 }
