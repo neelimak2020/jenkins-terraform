@@ -35,6 +35,8 @@ bat label: '', script: 'terraform --version'
   // Run terraform init
   stage('init') {
     node {
+	    ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+
     withCredentials([[
 		$class: 'AmazonWebServicesCredentialsBinding',
 		 accessKeyVariable: 'AWS_ACCESS_KEY_ID',
@@ -47,10 +49,12 @@ bat label: '', script: 'terraform init'
       }
     }
   }
-
+  }
   // Run terraform plan
   stage('plan') {
     node {
+	    ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+
       withCredentials([[
       $class: 'AmazonWebServicesCredentialsBinding',
                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
@@ -63,12 +67,14 @@ bat label: '', script: 'terraform plan'
       }
     }
   }
-
+  }
   if (env.BRANCH_NAME == 'master') {
 
     // Run terraform apply
     stage('apply') {
       node {
+	      ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+
         withCredentials([[
 		 $class: 'AmazonWebServicesCredentialsBinding',
                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
@@ -82,10 +88,12 @@ bat label: '', script: 'terraform plan'
         }
       }
     }
-
+    }
     // Run terraform show
     stage('show') {
       node {
+	      ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+
         withCredentials([[
 	 $class: 'AmazonWebServicesCredentialsBinding',
                  accessKeyVariable: 'AWS_ACCESS_KEY_ID',
@@ -95,7 +103,7 @@ bat label: '', script: 'terraform plan'
           ansiColor('xterm') {
 		bat label: '', script: 'terraform show'     
 
-		  
+	  }  
           }
         }
       }
