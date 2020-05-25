@@ -3,7 +3,7 @@
 try {
   stage('checkout') {
     node {
-ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+ws('C:\\Users\\Neelima\\Desktop\\t2') {
     
       checkout scm
 		}
@@ -27,7 +27,7 @@ bat label: '', script: '''echo starting pipeline'''
   // Run terraform init
 	stage('init') {
     node {
-	    ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+	    ws('C:\\Users\\Neelima\\Desktop\\t1') {
 
     withCredentials([[
 		$class: 'AmazonWebServicesCredentialsBinding',
@@ -47,7 +47,7 @@ bat label: '', script: 'terraform init'
   // Run terraform plan
   stage('plan') {
     node {
-	    ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+	    ws('C:\\Users\\Neelima\\Desktop\\t1') {
 
       withCredentials([[
       $class: 'AmazonWebServicesCredentialsBinding',
@@ -67,7 +67,7 @@ bat label: '', script: 'terraform plan'
     // Run terraform apply
     stage('apply') {
       node {
-	      ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+	      ws('C:\\Users\\Neelima\\Desktop\\t1') {
 
         withCredentials([[
 		 $class: 'AmazonWebServicesCredentialsBinding',
@@ -86,7 +86,7 @@ bat label: '', script: 'terraform plan'
     // Run terraform show
     stage('show') {
       node {
-	      ws('C:\\Users\\Neelima\\Desktop\\terraform') {
+	      ws('C:\\Users\\Neelima\\Desktop\\t1') {
 
         withCredentials([[
 	 $class: 'AmazonWebServicesCredentialsBinding',
